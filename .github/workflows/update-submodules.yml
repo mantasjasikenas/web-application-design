@@ -1,0 +1,34 @@
+name: Update Submodules
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '10 0 * * *'  # Execute at midnight every day
+
+jobs:
+  update_submodule:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Update submodule
+        run: |
+          git submodule update --init --recursive
+          git submodule update --remote --recursive
+
+      - name: Check if changes were made
+        id: check_changes
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "No changes were made."
+          else
+            echo "Changes were made."
+            git config user.email "actions@github.com"
+            git config user.name "GitHub Actions"
+            git add .
+            git commit -m 'Update submodules'
+            git push
+          fi
