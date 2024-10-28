@@ -2,3 +2,6 @@
 	path = web-application-design-api
 	url = https://github.com/mantasjasikenas/web-application-design-api.git
 	branch = master
+[submodule "web-application-design-web"]
+	path = web-application-design-web
+	url = https://github.com/mantasjasikenas/web-application-design-web.git
