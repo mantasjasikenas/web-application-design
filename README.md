@@ -42,12 +42,16 @@ Sistemai naudotojai bus trijų rolių: svečias, registruotas naudotojas ir admi
 
 ## Taikomosios srities objektai
 
-Projektas ⇒ Sekcija ⇒ Užduotis
+Taikomosios srities objektus sieja hierarchinis ryšys: `Projektas` ⇒ `Sekcija` ⇒ `Užduotis`
 
 - Projektas (project)
+  - tai aukščiausio lygio objektas, kuris grupuoja sekcijas ir užduotis. Projektas turi pavadinimą, aprašymą, sukūrimo datą ir sukūrėją.
 - Sekcija (section)
+  - tai objektas, kuris priklauso tam tikram projektui. Sekcija turi pavadinimą, sukūrimo datą ir sukūrėją.
 - Užduotis (task)
+  - tai objektas, kuris priklauso tam tikrai sekcijai. Užduotis turi pavadinimą, aprašymą, prioritetą, atlikimo būseną, atlikimo terminą, sukūrimo datą ir sukūrėją.
 - Naudotojas (user)
+  - tai objektas, kuris turi prisijungimo duomenis, tokius kaip el. paštas, slapyvardis ir slaptažodis.
 
 ## Sistemos architektūra
 
@@ -62,15 +66,73 @@ Projektas ⇒ Sekcija ⇒ Užduotis
 
 ## Diegimo diagrama
 
-![alt text](./docs/assets/deployment_diagram.png)
+Klientinė dalis bus talpinama `Vercel` platformoje, o serverinė dalis, API ir duomenų bazė, bus talpinama `DigitalOcean App Platform` platformoje.
+
+![Diegimo diagrama](./docs/assets/deployment_diagram.png)
 
 ## Naudotojo sąsajos projektas
 
-Projektuojamos sąsajos langų wireframe`ai ir juos atitinkančios realizacijos langų iškarpos.
+Toliau pateikiami realizuotų langų ekrano iškarpos ir juos atitinkantys wireframe`ai. Prototipai sukurti naudojant [OpenSource shadcn/ui - kit](https://www.figma.com/community/file/1426161867268046394/opensource-shadcn-ui-kit-for-figma) šabloną, naudojantis **Figma** įrankiu. Prototipai buvo sukurti tik pagrindiniams langams.
+
+### Pradinis puslapis
+
+Pradinis puslapis yra pirmas puslapis, kurį matys naudotojas atėjęs į svetainę. Jame bus pateikta trumpa informacija apie sistemą, prisijungimo ir registracijos mygtukai. Šis puslapis matomas tik svečiams.
+
+![Website](docs/assets/website/home.png)
+
+### Registracijos puslapis
+
+Registracijos puslapyje naudotojas gali užsiregistruoti į sistemą. Registracijos formoje svečias turi suvesti savo slapyvardį, el. paštą ir slaptažodį.
+
+|              Realizuotas langas               |                    Prototipas lango                     |
+| :-------------------------------------------: | :-----------------------------------------------------: |
+| ![alt text](docs/assets/website/register.png) | ![alt text](docs/assets/website/register-prototype.png) |
+
+### Prisijungimo puslapis
+
+Prisijungimo puslapyje naudotojas gali prisijungti prie sistemos. Prisijungimo formoje naudotojas turi suvesti savo el. paštą ir slaptažodį.
+
+|            Realizuotas langas             |                   Prototipas lango                   |
+| :---------------------------------------: | :--------------------------------------------------: |
+| ![Website](docs/assets/website/login.png) | ![alt text](docs/assets/website/login_prototype.png) |
+
+### Projektų informacijos langas
+
+Projektų informacijos lange bus pateikta informacija apie projektą, jo pavadinimą, aprašymą, sukūrimo datą ir sukūrėją. Taip pat yra galimybė redaguoti projektą arba jį ištrinti.
+
+|              Realizuotas langas              |                    Prototipas lango                     |
+| :------------------------------------------: | :-----------------------------------------------------: |
+| ![Website](docs/assets/website/projects.png) | ![alt text](docs/assets/website/projects_prototype.png) |
+
+### Projekto sukūrimo modalinis langas
+
+Projekto sukūrimo modale naudotojas gali sukurti naują projektą. Sukūrus projektą, jis bus matomas projekto informacijos lange. Projekto sukūrimo modale naudotojas turi suvesti projekto pavadinimą ir aprašymą. Identiškai atrodys ir projekto redagavimo modalinis langas.
+
+![Website](docs/assets/website/create_project.png)
+
+### Užduočių puslapis
+
+Užduočių puslapyje pateikta informacija apie visas užduotis, kurios yra priskirtos tam tikrai sekcijai. Užduočių puslapyje galima peržiūrėti užduotis, sukurti naują užduotį, redaguoti esamą užduotį arba ją ištrinti.
+
+|            Realizuotas langas             |                   Prototipas lango                   |
+| :---------------------------------------: | :--------------------------------------------------: |
+| ![Website](docs/assets/website/tasks.png) | ![alt text](docs/assets/website/tasks_prototype.png) |
+
+### Užduoties informacijos langas
+
+Paspaudus ant užduoties, atidaromas užduoties informacijos langas, kuriame pateikta informacija apie užduotį, jos pavadinimą, aprašymą, prioritetą, atlikimo būseną, atlikimo terminą.
+
+![Website](docs/assets/website/task_details.png)
+
+### Sekcijos sukūrimo modalinis langas
+
+Sekcijos sukūrimo modale naudotojas gali sukurti naują sekciją. Sukūrus sekciją, ji atsidaras užduočių puslapyje. Sekcijos sukūrimo modale naudotojas turi suvesti sekcijos pavadinimą. Identiškai atrodys ir sekcijos redagavimo modalinis langas.
+
+![Website](docs/assets/website/create_section.png)
 
 ## API specifikacija
 
-API specifikacija bus aprašyta naudojant `OpenAPI` standartą. Pilnas API aprašas gali būti rastas [čia](./docs/assets/openapi.json).
+API specifikacija bus aprašyta naudojant `OpenAPI` standartą. Pilnas API aprašas gali būti rastas [čia](./docs/assets/openapi.json). Specifikacija pateikiama anglų kalba.
 
 ---
 
@@ -902,3 +964,5 @@ API specifikacija bus aprašyta naudojant `OpenAPI` standartą. Pilnas API apra�
 | 403         | Forbidden            |
 
 ## Projekto išvados
+
+-
