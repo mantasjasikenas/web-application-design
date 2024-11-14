@@ -4,6 +4,24 @@
   <h1>Tornado - užduočių valdymo sistema</h1>
 </div>
 
+## Turinys
+
+- [Turinys](#turinys)
+- [Sprendžiamo uždavinio aprašymas](#sprendžiamo-uždavinio-aprašymas)
+  - [Sistemos paskirtis](#sistemos-paskirtis)
+  - [Funkciniai reikalavimai](#funkciniai-reikalavimai)
+- [Taikomosios srities objektai](#taikomosios-srities-objektai)
+- [Sistemos architektūra](#sistemos-architektūra)
+  - [Sistemos sudedamosios dalys](#sistemos-sudedamosios-dalys)
+  - [Diegimo diagrama](#diegimo-diagrama)
+- [Naudotojo sąsajos projektas](#naudotojo-sąsajos-projektas)
+- [API specifikacija](#api-specifikacija)
+  - [Autentifikacijos API metodai](#auth-endpoints)
+  - [Projektų API metodai](#projects-endpoints)
+  - [Sekcijų API metodai](#sections-endpoints)
+  - [Užduočių API metodai](#tasks-endpoints)
+- [Projekto išvados](#projekto-išvados)
+
 ## Sprendžiamo uždavinio aprašymas
 
 ### Sistemos paskirtis
@@ -64,7 +82,7 @@ Taikomosios srities objektus sieja hierarchinis ryšys: `Projektas` ⇒ `Sekcija
 - Duomenys bus saugomi `PostgreSQL` duomenų bazėje, kuri bus pasiekiama per `Exposed ORM`. Duomenų bazė yra reliacinė,
   kuri leidžia saugoti duomenis lentelėse bei sudaryti ryšius tarp jų.
 
-## Diegimo diagrama
+### Diegimo diagrama
 
 Klientinė dalis bus talpinama `Vercel` platformoje, o serverinė dalis, API ir duomenų bazė, bus talpinama `DigitalOcean App Platform` platformoje.
 
@@ -965,4 +983,8 @@ API specifikacija bus aprašyta naudojant `OpenAPI` standartą. Pilnas API apra�
 
 ## Projekto išvados
 
--
+- Semestro metu buvo sukurta užduočių valdymo sistema, kuri leidžia užsiregistravusiems naudotojams kurti projektus, sekcijas ir užduotis.
+- Sistemos architektūra susideda iš kliento pusės, kuri realizuota naudojant `SvelteKit` karkasą, serverio pusės, kuri realizuota naudojant `Ktor` karkasą, ir duomenų bazės, kuri yra kuriama naudojant `PostgreSQL` duomenų bazę.
+- Naudotojo sąsajos prototipai sukurti naudojant `Figma` įrankį. Sukurti prototipai leido pagreitinti svetainės UI realizavimo procesą.
+- API specifikacija aprašyta naudojant `OpenAPI` standartą iš kurio galima, kokie endpoint'ai yra, kokie parametrai reikalingi ir kokie atsakymai grąžinami.
+- Šio projekto kūrimas padėjo pritaikyti modulio metu įgytas teorines žinias praktiškai bei susipažinti su naujomis technologijomis ir įrankiais.
