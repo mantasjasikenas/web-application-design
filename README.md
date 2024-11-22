@@ -983,8 +983,7 @@ API specifikacija bus aprašyta naudojant `OpenAPI` standartą. Pilnas API apra�
 
 ## Projekto išvados
 
-- Semestro metu buvo sukurta užduočių valdymo sistema, kuri leidžia užsiregistravusiems naudotojams kurti projektus, sekcijas ir užduotis.
-- Sistemos architektūra susideda iš kliento pusės, kuri realizuota naudojant `SvelteKit` karkasą, serverio pusės, kuri realizuota naudojant `Ktor` karkasą, ir duomenų bazės, kuri yra kuriama naudojant `PostgreSQL` duomenų bazę.
-- Naudotojo sąsajos prototipai sukurti naudojant `Figma` įrankį. Sukurti prototipai leido pagreitinti svetainės UI realizavimo procesą.
-- API specifikacija aprašyta naudojant `OpenAPI` standartą iš kurio galima, kokie endpoint'ai yra, kokie parametrai reikalingi ir kokie atsakymai grąžinami.
-- Šio projekto kūrimas padėjo pritaikyti modulio metu įgytas teorines žinias praktiškai bei susipažinti su naujomis technologijomis ir įrankiais.
+- Projekto kūrimas suteikė galimybę pritaikyti semestro metu įgytas teorines žinias realioje sistemoje, padedant geriau suprasti, kaip įvairios technologijos ir įrankiai veikia kartu.
+- Naudotos technologijos, tokios kaip `SvelteKit` (kliento pusė), `Ktor` (serverio pusė) ir `PostgreSQL` (duomenų bazė), buvo tinkamai pasirinktos ir užtikrino sistemai reikalingą funkcionalumą, greitį ir lankstumą.
+- Naudojant `Figma` įrankį, buvo sukurti prototipai, kurie padėjo ne tik paspartinti UI realizavimo procesą, bet ir užtikrinti, kad galutinė sistema būtų patogi naudoti.
+- Naudojant `OpenAPI` specifikaciją, buvo sukurtas aiškus ir standartizuotas API, kas leido lengviau valdyti komunikaciją tarp kliento ir serverio bei supaprastino integracijos procesą.
